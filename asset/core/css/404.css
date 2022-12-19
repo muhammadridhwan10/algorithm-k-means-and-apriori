@@ -1,0 +1,62 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	background:#2f6d92;
+	padding:0;
+	margin:0;
+	font-family:Helvetica, Arial, sans-serif;
+}
+
+.container {
+	background-color:#2f6d92;
+	margin: 0 auto;
+	text-align:center;
+	padding-top:100px;
+}
+
+h3{
+	font-size:16px;
+	color:#FFF;
+	font-weight:bold;
+	text-align:center;
+	line-height:130%;
+}
+.buton{
+	background:#f0c40f;
+	padding:10px 20px;
+	color:#000;
+	font-weight:bold;
+	text-align:center;
+	border-radius:3px;
+	text-decoration:none;
+}
+a:hover{
+	color:#F00;
+}
+span{
+	font-size:14px;
+	color:#FFF;
+	font-weight:normal;
+	text-align:center;
+}
+span a{
+	color:#FF0;
+	text-decoration:none;
+}
+span a:hover{
+	color:#F00;
+}
+
+
+@media screen and (max-width: 500px){
+	img{
+		width:70%;
+	}
+	.container{
+		padding:70px 10px 10px 10px;
+	}
+	h3{
+		font-size:14px;
+	}
+}

@@ -1,0 +1,59 @@
+#legend {
+	height: 50px;
+	background:rgba(192,192,192,0.3)
+}
+#legend span {
+	display: inline-block;
+	padding: 15px 30px;
+	position: relative;
+}
+#legend span:after {
+	padding-left: 4px;
+	content: '\00a0\00a0\00a0\00a0\00a0\00a0';
+text-decoration: line-through;
+}
+#legend1 {
+	height: 50px;
+	background:rgba(192,192,192,0.3)
+}
+
+#legend1 span {
+	display: inline-block;
+	padding: 15px 30px;
+	position: relative;
+}
+#legend1 span:after {
+	padding-left: 4px;
+	content: '\00a0\00a0\00a0\00a0\00a0\00a0';
+text-decoration: line-through;
+}
+#legend2 {
+	height: 50px;
+	background:rgba(192,192,192,0.3)
+}
+
+#legend2 span {
+	display: inline-block;
+	padding: 15px 30px;
+	position: relative;
+}
+#legend2 span:after {
+	padding-left: 4px;
+	content: '\00a0\00a0\00a0\00a0\00a0\00a0';
+text-decoration: line-through;
+}
+#legend3 {
+	height: 50px;
+	background:rgba(192,192,192,0.3)
+}
+
+#legend3 span {
+	display: inline-block;
+	padding: 15px 30px;
+	position: relative;
+}
+#legend3 span:after {
+	padding-left: 4px;
+	content: '\00a0\00a0\00a0\00a0\00a0\00a0';
+text-decoration: line-through;
+}
