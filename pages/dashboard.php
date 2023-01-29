@@ -14,13 +14,13 @@
 	<div class="login-box" style="margin-left:150px">
 		<div class="login-box-body" style="background: #3c8dbc">
 			<div class="login-logo" style="color:white;">
-			Clustering K-Means
+			K-Means
 			</div>
 			<div style="margin-left:20%;margin-right:20%;margin-bottom:20px;">
 				<img src="asset/core/img/growths.png" class="img-responsive">
 			</div>
 			<p style="color:white;">
-				Fitur ini bertujuan untuk menentukan persediaan barang dan mengelompokkan barang dari stok tersebut yang terjual apakah laris atau tidak laris, sehingga penjual bisa mengetahui barang yang perlu ditambah jumlah barang nya atau mengurangi barang nya.
+				Fitur ini bertujuan untuk menentukan persediaan barang dan mengelompokkan barang dari stok tersebut, yang minat apakah tinggi atau rendah, sehingga penjual bisa mengetahui barang yang minat nya tinggi dan minat nya rendah.
 			</p>
 			<a href="?page=barang">
 			<button style="background:white; color:#3c8dbc;" class="btn btn-block btn-flat">Ke menu K-Means</button>
@@ -34,16 +34,16 @@
 		<div class="login-box" style="margin-left:150px">
 		<div class="login-box-body" style="background: #3c8dbc">
 			<div class="login-logo" style="color:white;">
-			Apriori
+			Naive Bayes
 			</div>
 			<div style="margin-left:20%;margin-right:20%;margin-bottom:20px;">
 				<img src="asset/core/img/growthss.png" class="img-responsive">
 			</div>
 			<p style="color:white;">
-				Fitur ini membantu penjual dalam memprediksi stok barang untuk menentukan stok barang yang perlu diperbanyak atau dikurangi agar efektif dalam meminimalisir penumpukan barang dan kerugian.
+				Fitur ini membantu penjual dalam memprediksi stok barang untuk menentukan stok barang yang perlu diperbanyak atau dikurangi dari hasil tinggi atau rendah nya minat pembeli agar efektif dalam meminimalisir penumpukan barang dan kerugian.
 			</p>
 			<a href="?page=transaksi">
-			<button style="background:white; color:#3c8dbc;" class="btn btn-block btn-flat">Ke menu Apriori</button>
+			<button style="background:white; color:#3c8dbc;" class="btn btn-block btn-flat">Ke fitur Naive Bayes</button>
 			</a>
 		</div>
 	</div>

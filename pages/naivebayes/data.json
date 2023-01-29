@@ -1,0 +1,302 @@
+[
+	{
+		"nama" : "I - 17 MARINA COOLER BOX 18 S ( 16 LTR )",
+		"jenis_barang" : "Peralatan Dapur",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "AP - 2 THERMOS PANAS AIR POT 2 LITER",
+		"jenis_barang" : "Peralatan Dapur",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "BR - 10 WIPER GLASS CLEANER",
+		"jenis_barang" : "Peralatan Kebersihan",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "BR - 66 LIVINA BATHROOM BRUSH NO. 201",
+		"jenis_barang" : "Peralatan Kebersihan",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "PT - 6 TIFFANY CANDY POT L (1600 ML)",
+		"jenis_barang" : "Peralatan Makanan",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "R - 10 RANTANG UKIR SUSUN-4",
+		"jenis_barang" : "Peralatan Makanan",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "NA - 8 REGEN BOTTLE 1000 ML",
+		"jenis_barang" : "Peralatan Makanan",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "GL - 12 GELAS C-2 + TUTUP + SEDOTAN",
+		"jenis_barang" : "Peralatan Makanan",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "K - 1 THERMO WATER JUG 1,3 LTR",
+		"jenis_barang" : "Peralatan Dapur",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "K - 7 THERMO WATER JUG 1,7 LTR",
+		"jenis_barang" : "Peralatan Dapur",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "K - 13 THERMO WATER JUG 2,5 LTR",
+		"jenis_barang" : "Peralatan Dapur",
+		"minat" : "Tinggi",
+		"status" : 0
+	},
+	{
+		"nama" : "R - 10 RANTANG UKIR SUSUN-4",
+		"jenis_barang" : "Peralatan Makanan",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "NH - 80 INFUSER CHAMP BOTTLE 820 ML",
+		"jenis_barang" : "Peralatan Makanan",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "J - 4 JUMBO COOLER 2,5 LITER",
+		"jenis_barang" : "Peralatan Makanan",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "SW - 30 FRESH SEAL WARE SW-30 370 ML SEKAT/TRANS",
+		"jenis_barang" : "Peralatan Makanan",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "BA - 31 BASKOM HATI",
+		"jenis_barang" : "Peralatan Dapur",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "BBC - 3 EMILIA FOOD CASE 270 ML",
+		"jenis_barang" : "Peralatan Makanan",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "I - 15 MARINA COOLER BOX 6 S ( 5,5 LTR )",
+		"jenis_barang" : "Peralatan Dapur",
+		"minat" : "Tinggi",
+		"status" : 1
+	},
+	{
+		"nama" : "PL - 8 EMBER 1/2 GL LUX + FILM",
+		"jenis_barang" : "Peralatan Kebersihan",
+		"minat" : "Tinggi",
+		"status" : 1
+	},
+	{
+		"nama" : "GL - 3 GAYUNG AIR POLOS",
+		"jenis_barang" : "Peralatan Kebersihan",
+		"minat" : "Tinggi",
+		"status" : 1
+	},
+	{
+		"nama" : "DC - 4 TUDUNG SAJI PERSEGI",
+		"jenis_barang" : "Peralatan Dapur",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "MB - 15 STAR SOAP CASE 02",
+		"jenis_barang" : "Peralatan Kebersihan",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "MUG ELEKTRIK 1.5 LION STAR NIKITA",
+		"jenis_barang" : "Peralatan Dapur",
+		"minat" : "Tinggi",
+		"status" : 1
+	},
+	{
+		"nama" : "SB - 2 SCHOOL BOX",
+		"jenis_barang" : "Peralatan Makanan",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "BW - 2 MANGKOK KOCOKAN TELOR B - 20",
+		"jenis_barang" : "Peralatan Dapur",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "NH - 81 HYDRO BOTTLE 1500 ML",
+		"jenis_barang" : "Peralatan Makanan",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "PP - 35 TOPLES HUGO ROUND JAR 105 ( 8 LT)",
+		"jenis_barang" : "Peralatan Dapur",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "KERANJANG SAMPAH REGE 353 KW CORNELIUS",
+		"jenis_barang" : "Peralatan Kebersihan",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "SB - 7 LUNCH KID",
+		"jenis_barang" : "Peralatan Makanan",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "NN - 85 FRONTIER BOTTLE 500 ML",
+		"jenis_barang" : "Peralatan Makanan",
+		"minat" : "Tinggi",
+		"status" : 1
+	},
+	{
+		"nama" : "I - 16 MARINA COOLER BOX 12 S ( 10 LTR )",
+		"jenis_barang" : "Peralatan Dapur",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "GL - 34 JUNIOR MUG 240 ML + TUTUP",
+		"jenis_barang" : "Peralatan Makanan",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "BASKOM JERMAN 4423 FRIEND",
+		"jenis_barang" : "Peralatan Dapur",
+		"minat" : "Tinggi",
+		"status" : 1
+	},
+	{
+		"nama" : "GL - 15 GAYUNG AIR DELUXE",
+		"jenis_barang" : "Peralatan Kebersihan",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "BAKING PAN 28 CM ORCHID",
+		"jenis_barang" : "Peralatan Dapur",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "GL - 3 GAYUNG AIR POLOS",
+		"jenis_barang" : "Peralatan Kebersihan",
+		"minat" : "Tinggi",
+		"status" : 1
+	},
+	{
+		"nama" : "BA - 9 BASKOM 20 DELUXE POLOS ( Ø 44 CM )",
+		"jenis_barang" : "Peralatan Dapur",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "BA - 7 BASKOM 16 DELUXE POLOS ( Ø 38 CM )",
+		"jenis_barang" : "Peralatan Dapur",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "BA - 20 BASKOM U.S.A 18 POLOS ( Ø 39 CM )",
+		"jenis_barang" : "Peralatan Dapur",
+		"minat" : "Tinggi",
+		"status" : 1
+	},
+	{
+		"nama" : "BA - 22 BASKOM U.S.A 22 POLOS ( Ø 53 CM )",
+		"jenis_barang" : "Peralatan Dapur",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "BA - 27 BASKOM U.S.A 30 POLOS ( Ø 71 CM )",
+		"jenis_barang" : "Peralatan Dapur",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "NH - 93 OLIF BOTTLE 500 ML TRITAN",
+		"jenis_barang" : "Peralatan Makanan",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "NH - 98 MINIGO BOTTLE 600 ML",
+		"jenis_barang" : "Peralatan Makanan",
+		"minat" : "Tinggi",
+		"status" : 1
+	},
+	{
+		"nama" : "BO - 3 LIVINA TOILET BRUSH NO. 103 + POT",
+		"jenis_barang" : "Peralatan Kebersihan",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "BO - 2 LIVINA TOILET BRUSH NO. 102 + POT",
+		"jenis_barang" : "Peralatan Kebersihan",
+		"minat" : "Tinggi",
+		"status" : 1
+	},
+	{
+		"nama" : "BMW - 4 MANGKOK 18 CM",
+		"jenis_barang" : "Peralatan Makanan",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "T - 49 NAMPAN NO. 10",
+		"jenis_barang" : "Peralatan Dapur",
+		"minat" : "Rendah",
+		"status" : 0
+	},
+	{
+		"nama" : "BR - 21 LIVINA KITCHEN BRUSH NO. 21",
+		"jenis_barang" : "Peralatan Dapur",
+		"minat" : "Tinggi",
+		"status" : 1
+	},
+	{
+		"nama" : "TOPLES CT 250",
+		"jenis_barang" : "Peralatan Makanan",
+		"minat" : "Tinggi",
+		"status" : 1
+	},
+	{
+		"nama" : "WATER JUG 4,1 LTR",
+		"jenis_barang" : "Peralatan Dapur",
+		"minat" : "Rendah",
+		"status" : 0
+	}
+]

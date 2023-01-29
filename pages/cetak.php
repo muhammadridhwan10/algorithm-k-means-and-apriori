@@ -30,7 +30,7 @@ error_reporting(0);
 							$q=mysqli_query("select * from tbl_data order by id asc");
 							while($r=mysqli_fetch_array($q)){
 							$min=0;
-							$sub=$r['jan']+$r['feb']+$r['mar'];
+							$sub=$r['mar']+$r['apr']+$r['mei'];
 							$c1=sqrt((pow(($r['stok']-$px1),2))+(pow(($sub-$py1),2)));
 							$c2=sqrt((pow(($r['stok']-$px2),2))+(pow(($sub-$py2),2)));
 							$min=0;
@@ -95,9 +95,9 @@ error_reporting(0);
                         <th rowspan=2>Hasil</th>
                     </tr>
 					<tr>
-						<th>Januari</th>
-						<th>Februari</th>
 						<th>Maret</th>
+						<th>April</th>
+						<th>Mei</th>
 					</tr>
                 </thead>
 				<tbody>
@@ -108,23 +108,23 @@ error_reporting(0);
 					while($row=$result->fetch_assoc())
 					{?>
 					<tr>
-						<?php $sub=$row['jan']+$row['feb']+$row['mar']; ?>
+						<?php $sub=$row['mar']+$row['apr']+$row['mei']; ?>
 						<?php
 						$c1=sqrt((pow(($row['stok']-$px1),2))+(pow(($sub-$py1),2)));
 						$c2=sqrt((pow(($row['stok']-$px2),2))+(pow(($sub-$py2),2)));
 						$min=min($c1,$c2);
 						if($min==$c1){
-							$ketmin="Laris";
+							$ketmin="Rendah";
 						}else{
-							$ketmin="Tidak Laris";					
+							$ketmin="Tinggi";					
 						}
 						?>
 						<td><?php echo $no;?></td>
 						<td><?php echo $row["nmb"]; ?></td>
 						<td><?php echo $row["stok"]; ?></td>
-						<td><?php echo $row["jan"]; ?></td>
-						<td><?php echo $row["feb"]; ?></td>
 						<td><?php echo $row["mar"]; ?></td>
+						<td><?php echo $row["apr"]; ?></td>
+						<td><?php echo $row["mei"]; ?></td>
 						<td><?php echo $sub; ?></td>
 						<td><?php echo number_format($c1,2); ?></td>
 						<td><?php echo number_format($c2,2); ?></td>

@@ -1,7 +1,7 @@
 <?php
 	//This api file contains json that put data from the mysql table
 	include "pages/apriori/config.php";
-	$query = mysqli_query($link,"SELECT * FROM tbl_transaksi");
+	$query = mysqli_query($link, "SELECT * FROM tbl_data");
 	$data = array();
 	while($r = mysqli_fetch_assoc($query)) {
 		$data[] = $r;

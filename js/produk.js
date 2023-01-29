@@ -2,8 +2,8 @@ $(document).ready( function () {
 	$('#table_ticket').DataTable({
 		"aButtons": [
 		{
-			"sExtends": "xls",
-			"sFileName": "Action List.xls",
+			"sExtends": "xlsx",
+			"sFileName": "Action List.xlsx",
 			"sButtonText": "Download All To Excel"
 		}],
 		"searching": true,
@@ -21,8 +21,13 @@ $(document).ready( function () {
 		[[10, 25, 50, 100, -1],
 		[10, 25, 50, 100, "All"]],
 		"columns": [
-		{ "data": "transaction_date" },
-		{ "data": "produk" },
+		{ "data": "id_barang" },
+		{ "data": "nmb" },
+		{ "data": "jenis_barang" },
+		{ "data": "stok" },
+		{ "data": "mar" },
+		{ "data": "apr" },
+		{ "data": "mei" },
 		],
 	});
 });

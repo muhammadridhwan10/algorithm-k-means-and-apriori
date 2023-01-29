@@ -126,20 +126,19 @@ if(!$_SESSION['is_login']){
             </div>
           </div>
 		<ul class="sidebar-menu">
-			<li class="header">CLUSTERING MENU</li>
-			<li class="treeview">
-              <a href="index.php">
-                 <i class="fa fa-dashboard"></i><span>Dashboard</span>
-              </a>
+			<li class="none">
+				<a href="index.php">
+					<i class="fa fa-dashboard"></i><span>Dashboard</span>
+				</a>
             </li>
+			<li class="header">Fitur K-Means</li>
+			
 			<li class="none"><a href="?page=barang"><i class="fa fa-folder"></i> <span>Data Barang</span></a></li>
 			<li class="none"><a href="?page=kriteria"><i class="fa fa-book"></i> <span>Kriteria</span></a></li>
 			<li class="none"><a href="?page=clustering"><i class="fa fa-star"></i> <span>Proses Clustering</span></a></li>
 			<li class="none"><a href="?page=hasil"><i class="fa fa-star"></i> <span>Hasil Clustering</span></a></li>
-			<li class="header">APRIORI MENU</li>
-			<li class="none"><a href="?page=transaksi"><i class="fa fa-folder"></i> <span>Data Transaksi</span></a></li>
-			<li class="none"><a href="?page=apriori"><i class="fa fa-star"></i> <span>Proses Apriori</span></a></li>
-			<li class="none"><a href="?page=hasil_rule"><i class="fa fa-bar-chart"></i> <span>Hasil Rule Apriori</span></a></li>
+			<li class="header"> Fitur Naive Bayes</li>
+			<li class="none"><a href="?page=transaksi"><i class="fa fa-star"></i> <span>Proses Naive Bayes</span></a></li>
 			<li class="none"><a href="logout.php"><i class="fa fa-sign-out"></i><span>Logout</span></a></li>
           </ul>
         </section>

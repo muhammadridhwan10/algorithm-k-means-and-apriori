@@ -73,7 +73,7 @@ include_once "pages/apriori/fungsi.php";?>
 					foreach ($Row as $Keycell => $cell) {
 						echo "<td>".$cell."</td>";
 						if($Key > 0 && $Keycell >= 0){
-							$queryvalue_ctn .= "'".mysqli_real_escape_string($link, format_date($cell))."',";
+							$queryvalue_ctn .= "'".mysqli_real_escape_string($link, $cell)."',";
 						}
 					}
 					echo "</tr>";

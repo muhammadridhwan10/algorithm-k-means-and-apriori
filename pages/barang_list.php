@@ -1,84 +1,107 @@
+<?php
+    ob_start();
+    $bpath = "";
+    include "pages/apriori/config.php";
+?>
+
 <section class="content-header">
-  <h1>
-	Data Barang
-  </h1>
-  <ol class="breadcrumb">
-	<li><a href="#">Home</a></li>
-	<li><a href="#">Barang</a></li>
-	<li class="active">List</a></li>
-  </ol>
+	<h1>
+		Data Transaksi
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#">Home</a></li>
+		<li><a href="#">Transaksi</a></li>
+		<li class="active">List</a></li>
+	</ol>
 </section>
 <!-- Main content -->
 <section class="content">
-  <div class="row">
+<div class="row">
 	<div class="col-xs-12">
-	<a href="?page=barang&action=tambah">
-		<button type="button" class="btn btn-primary btn-sm flat">
-			<span class="glyphicon glyphicon-plus"></span> Tambah
-		</button>
-	</a>
-	  <div class="box">
-		<div class="box-header">
-		  <h3 class="box-title">Data Barang</h3>
-		</div>
-		<div class="box-body">
-		  <table id="example1" class="table table-bordered table-striped">
-			<thead>
-			  <tr>
-				<th width="5%">No</th>
-				<th>Nama Barang</th>
-				<th>Total Stok Barang</th>
-				<th>Januari</th>
-				<th>Februari</th>
-				<th>Maret</th>
-				<th>Total</th>
-				<th width="12%" class="text-center">Action</th>
-			  </tr>
-			</thead>
-			<tbody>
-			  <?php
-			  $result =$mysqli->query("SELECT a.* FROM tbl_data a");
-			  if($result->num_rows>0){
-			  $no=1;
-				while($row=$result->fetch_assoc())
-				{?>
-				<tr>
-					<?php $sub=$row['jan']+$row['feb']+$row['mar']; ?>
-					
-					<td><?php echo $no;?></td>
-					<td><?php echo $row["nmb"]; ?></td>
-					<td><?php echo $row["stok"]; ?></td>
-					<td><?php echo $row["jan"]; ?></td>
-					<td><?php echo $row["feb"]; ?></td>
-					<td><?php echo $row["mar"]; ?></td>
-					<td><?php echo $sub; ?></td>
-					<td class="text-center">
-						<div class="btn-group">
-							<a href="?page=barang&action=edit&id_barang=<?=$row["id_barang"];?>">
-								<button type="button" class="glyphicon glyphicon-pencil btn btn-sm btn-warning" title="Edit Barang"></button>
-							</a>
-							<a href="?page=barang&action=hapus&id_barang=<?=$row["id_barang"];?>" onclick="return confirm('Apakah anda yakin akan menghapus data ini ?');">
-								<button  type="button" class="glyphicon glyphicon-trash btn btn-sm btn-danger" title="Hapus Barang"></button>
-							</a>
-						</div>
-					</td>
-				</tr>
-				<?php $no++; ?>
-				<?php } ?>
-			  <?php } ?>
-			</tbody>
-				   
-			<tfoot>
-			</tfoot>
-		  </table>
+		<br>
+			<form method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <div class="input-group">
+                        <label>Import data from excel</label>
+                        <input name="fileproduk" type="file" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input name="submit" type="submit" value="Upload Data" class="btn btn-success">
+                </div>
+                <div class="form-group">
+                    <button name="delete" type="submit"  class="btn btn-danger" >
+                        <i class="fa fa-trash-o"></i> Delete All Data Transaction
+                    </button>
+                </div>
+            </form>
+                <?php
+                    //If user click import button
+                    if(isset($_POST["submit"])){
+                        //print_r($_FILES["fileexcel"]);
+                        //If file is exist
+                        if($_FILES["fileproduk"]["name"] != ""){
+                            //Get all columns from the mysql table
+                            $query_column = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'iseng' AND TABLE_NAME = 'tbl_data' AND COLUMN_NAME";
+                            $result_column = mysqli_query($link,$query_column); 
 
-		</div><!-- /.box-body -->
-	  </div><!-- /.box -->
+                            //This var will be used in import process 
+                            $column_stmt = "";
+                            while ($row_CL = mysqli_fetch_array($result_column)){
+                                $column_stmt .= "`".$row_CL["COLUMN_NAME"]."`,";
+                            }
+                            $column_stmt = substr($column_stmt,0,'-1');
+                            $table_name = "tbl_data";
+                            
+                            //Define Upload Directory
+                            $uploaddir = 'uploads/';
+                            $uploadfile = $uploaddir . basename($_FILES["fileproduk"]["name"]);
+                            if (move_uploaded_file($_FILES["fileproduk"]["tmp_name"], $uploadfile)){
+                                echo "<p class='text-center'><strong>";
+                                echo "File imported successfully! Table Above Are Data What You Have Been Imported";
+                                echo "</strong></p>";
+                            }
+                            $certainfile = $uploadfile;
+                            include("lib/excelreadertrans.php");
+                        }else{
+                            echo "<script>alert('File Is Empty')</script>";
+                        }
+                    }
+                ?>
+		<div class="box">
+			<div class="box-header">
+			<h3 class="box-title">Data Barang</h3>
+			</div>
+			<div class="box-body">
+                <table id="table_ticket" class="table table-bordered table-striped">
+                    <thead>
+                        <tr class="tableheader">
+                            <?php 
+                                    //Get all columns from the mysql table
+                                $query = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'iseng' AND TABLE_NAME = 'tbl_data'";
+                                $doquery = mysqli_query($link,$query);   
+                                while($row = mysqli_fetch_array($doquery)){ 
+                                    echo "<th>".$row["COLUMN_NAME"]."</th>";
+                                }          
+                            ?>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+
+			</div><!-- /.box-body -->
+		</div><!-- /.box -->
 	</div><!-- /.col -->
-  </div><!-- /.row -->
+</div><!-- /.row -->
 </section>
-<script type="text/javascript">
-  $(function () {
-	$("#example1").dataTable();
-  });
-</script>
+<!-- <script type="text/javascript">
+$(function () {
+	$("#table_ticket").dataTable();
+});
+</script> -->
+<script src="<?php echo $bpath ?>plugins/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="<?php echo $bpath ?>plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="<?php echo $bpath ?>plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="<?php echo $bpath ?>plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+<script src="js/produk.js"></script>
