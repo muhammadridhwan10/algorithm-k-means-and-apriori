@@ -20,7 +20,7 @@
 		Login Admin
       </div>
 		<div style="margin-left:20%;margin-right:20%;margin-bottom:20px;">
-			<img src="asset/core/img/logo.png" class="img-responsive">
+			<img src="asset/core/img/logo.jpg" class="img-responsive">
 		</div>
 		<form method="post" name="login" action="auth.php">	
           <div class="form-group has-feedback">
