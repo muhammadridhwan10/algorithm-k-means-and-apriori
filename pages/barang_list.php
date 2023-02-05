@@ -1,7 +1,7 @@
 <?php
     ob_start();
     $bpath = "";
-    include "pages/apriori/config.php";
+    include "pages/fungsi/config.php";
 ?>
 
 <section class="content-header">

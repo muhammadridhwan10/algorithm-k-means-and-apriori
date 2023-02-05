@@ -28,6 +28,7 @@ $(document).ready( function () {
 		{ "data": "mar" },
 		{ "data": "apr" },
 		{ "data": "mei" },
+		{ "data": "minat"}
 		],
 	});
 });

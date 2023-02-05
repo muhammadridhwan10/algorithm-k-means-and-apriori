@@ -1,28 +1,29 @@
 <section class="content-header">
-  <h1>
+<h1>
 	Metode Clustering
-  </h1>
-  <ol class="breadcrumb">
+</h1>
+<ol class="breadcrumb">
 	<li><a href="#">Home</a></li>
 	<li><a href="#">Clustering</a></li>
 	<li class="active">Hasil</a></li>
-  </ol>
+</ol>
 </section>
 <section class="content">
-  <div class="row">
+<div class="row">
 	<div class="col-xs-12">
-	  <div class="box">
+	<div class="box">
 		<div class="box-header">
-		  <h3 class="box-title">Hasil Clustering</h3>
-		  <div class="box-tools pull-right">
+		
+		<h3 class="box-title">Hasil Clustering</h3>
+		<div class="box-tools pull-right">
 			<a class="btn btn-primary btn-md" href="pages/cetak.php">
 				<span class="glyphicon fa fa-print"></span> <b>Cetak</b>
 			</a>
-		  </div>
+		</div>
 		</div>
 		<div class="box-body">
 			<?php
-			 $sql_edit = mysqli_query("SELECT * FROM tbl_hasil WHERE id_hasil='1'");
+			$sql_edit = mysqli_query("SELECT * FROM tbl_hasil WHERE id_hasil='1'");
 				$row =  mysqli_fetch_array($sql_edit);
 								$px1=$row['c1'];
 								$py1=$row['c2'];
@@ -97,6 +98,7 @@
 					<th>Total</th>
 					<th>C1</th>
 					<th>C2</th>
+					<th>Minat</th>
 					<th>Hasil</th>
 					<!-- <th width="12%" class="text-center">Action</th> -->
 				</tr>
@@ -126,9 +128,11 @@
 						<td><?php echo $row["mar"]; ?></td>
 						<td><?php echo $row["apr"]; ?></td>
 						<td><?php echo $row["mei"]; ?></td>
+						
 						<td><?php echo $sub; ?></td>
 						<td><?php echo number_format($c1,2); ?></td>
 						<td><?php echo number_format($c2,2); ?></td>
+						<td><?php echo $row["minat"]; ?></td>
 						<td><?php echo $ketmin; ?></td>
 						<!-- <td class="text-center">
 							<div class="btn-group">
@@ -147,15 +151,23 @@
 				</tbody>
 					
 				<tfoot>
+				<h4 class="box-title">Hasil Accuracy
+			<?php
+						$nilai_tepat = 26;
+						$nilai_akurasi = 26/50*100;
+
+						echo $nilai_akurasi. '%';
+			?>
+		</h4>
 				</tfoot>
 			</table>
 		</div>
-	  </div>
 	</div>
-  </div>
+	</div>
+</div>
 </section>
 <script type="text/javascript">
-  $(function () {
+$(function () {
 	$("#example1").dataTable();
-  });
+});
 </script>

@@ -1,5 +1,5 @@
 <?php set_time_limit(0); 
-include_once "pages/apriori/fungsi.php";?>
+include_once "pages/fungsi/fungsi.php";?>
 <style type="text/css">
 	.overflow{
 		overflow: auto;

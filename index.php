@@ -183,7 +183,7 @@ if(!$_SESSION['is_login']){
 			}else if($action=="hapus"){
 				include "pages/produk_delete.php";
 			}else{
-				include "pages/apriori/transaksi_list.php";
+				include "pages/naivebayes/transaksi_list.php";
 			}
 		}else if($page=="clustering"){
 			include "pages/proses_clustering.php";
@@ -199,12 +199,6 @@ if(!$_SESSION['is_login']){
 			}else{
 				include "pages/admin_list.php";
 			}
-		}else if($page=="apriori"){
-			include "pages/apriori/proses_apriori.php";
-		}else if($page=="hasil_rule"){
-			include "pages/apriori/hasil_rule.php";
-		}else if($page=="view_rule"){
-			include "pages/apriori/view_rule.php";
 		}else if($page=="profile"){
 			include "pages/profile.php";
 		}else{
