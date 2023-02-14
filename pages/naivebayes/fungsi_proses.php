@@ -1,4 +1,5 @@
 <?php
+include "pages/apriori/config.php";
 function dec(){
 	return 4;
 }
@@ -53,30 +54,30 @@ function ProsesNaiveBayes($db_object, $id_tbl_data=0,
         
 	//display table probabilitas jenis_kelamin
         if($show_perhitungan){
-			echo "<table class='table table-bordered table-striped  table-hover' style='width:40%'>";
-				echo "<tr>";
-					echo "<td><b><u>Jenis Barang:</u></b></td>";
-					echo "<td>Tinggi</td>";
-					echo "<td>Rendah</td>";
-				echo "</tr>";
-				echo "<tr>";
-					echo "<td>PERALATAN DAPUR</td>";
-					echo "<td>".number_format($p_jenis_barang_dapur_tinggi, dec())."</td>";
-					echo "<td>".number_format($p_jenis_barang_dapur_rendah, dec())."</td>";
-				echo "</tr>";
-				echo "<tr>";
-								echo "<td>PERALATAN MAKANAN</td>";
-								echo "<td>".number_format($p_jenis_barang_makanan_tinggi, dec())."</td>";
-								echo "<td>".number_format($p_jenis_barang_makanan_rendah, dec())."</td>";
-				echo "</tr>";
-						echo "<tr>";
-					echo "<td>PERALATAN KEBERSIHAN</td>";
-					echo "<td>".number_format($p_jenis_barang_kebersihan_tinggi, dec())."</td>";
-					echo "<td>".number_format($p_jenis_barang_kebersihan_rendah, dec())."</td>";
-				echo "</tr>";
-			echo "</table>";
+			// echo "<table class='table table-bordered table-striped  table-hover' style='width:40%'>";
+			// 	echo "<tr>";
+			// 		echo "<td><b><u>Jenis Barang:</u></b></td>";
+			// 		echo "<td>Tinggi</td>";
+			// 		echo "<td>Rendah</td>";
+			// 	echo "</tr>";
+			// 	echo "<tr>";
+			// 		echo "<td>PERALATAN DAPUR</td>";
+			// 		echo "<td>".number_format($p_jenis_barang_dapur_tinggi, dec())."</td>";
+			// 		echo "<td>".number_format($p_jenis_barang_dapur_rendah, dec())."</td>";
+			// 	echo "</tr>";
+			// 	echo "<tr>";
+			// 					echo "<td>PERALATAN MAKANAN</td>";
+			// 					echo "<td>".number_format($p_jenis_barang_makanan_tinggi, dec())."</td>";
+			// 					echo "<td>".number_format($p_jenis_barang_makanan_rendah, dec())."</td>";
+			// 	echo "</tr>";
+			// 			echo "<tr>";
+			// 		echo "<td>PERALATAN KEBERSIHAN</td>";
+			// 		echo "<td>".number_format($p_jenis_barang_kebersihan_tinggi, dec())."</td>";
+			// 		echo "<td>".number_format($p_jenis_barang_kebersihan_rendah, dec())."</td>";
+			// 	echo "</tr>";
+			// echo "</table>";
 
-			echo "<br>";
+			// echo "<br>";
         }
         //jawaban_a
         //x jawaban_a sanguin
@@ -87,20 +88,20 @@ function ProsesNaiveBayes($db_object, $id_tbl_data=0,
 	$x_total_stok_rendah = $jumlah_total_stok_rendah/$jumlah_rendah;
 
         if($show_perhitungan){
-        echo "<br>";
-        echo "<strong><u>Atribut Stok:<br></u></strong>";
-	echo "X Stok Tinggi=".number_format($x_total_stok_tinggi, dec())."<br>";
-	echo "X Stok Rendah=".number_format($x_total_stok_rendah, dec())."<br>";
-	echo "<br>";
+    //     echo "<br>";
+    //     echo "<strong><u>Atribut Stok:<br></u></strong>";
+	// echo "X Stok Tinggi=".number_format($x_total_stok_tinggi, dec())."<br>";
+	// echo "X Stok Rendah=".number_format($x_total_stok_rendah, dec())."<br>";
+	// echo "<br>";
         }
 
 	$s2_total_stok_tinggi = get_s2_populasi($db_object, 'stok', 'Tinggi', $x_total_stok_tinggi, $jumlah_tinggi);
 	$s2_total_stok_rendah = get_s2_populasi($db_object, 'stok', 'Rendah', $x_total_stok_rendah, $jumlah_rendah);
 
         if($show_perhitungan){
-	echo "S2 Stok Tinggi=".number_format($s2_total_stok_tinggi, dec())."<br>";
-	echo "S2 Stok Rendah=".number_format($s2_total_stok_rendah, dec())."<br>";
-	echo "<br>";
+	// echo "S2 Stok Tinggi=".number_format($s2_total_stok_tinggi, dec())."<br>";
+	// echo "S2 Stok Rendah=".number_format($s2_total_stok_rendah, dec())."<br>";
+	// echo "<br>";
         }
 
 	//S jawaban_a Sanguin
@@ -108,18 +109,20 @@ function ProsesNaiveBayes($db_object, $id_tbl_data=0,
 	//S jawaban_a Koleris
 	$s_total_stok_rendah = sqrt($s2_total_stok_rendah);
 
+	if($show_perhitungan)
+	{
+	// echo "S Stok Tinggi = ".number_format($s_total_stok_tinggi, dec())."<br>";
+	// echo "S Stok Rendah = ".number_format($s_total_stok_rendah, dec())."<br>";
+	}
+
 	//s2 ^2 jawaban_a sanguin
 	$s2_pangkat2_stok_tinggi = pow($s_total_stok_tinggi, 2);
 	//s2 ^2 jawaban_a koleris
 	$s2_pangkat2_stok_rendah = pow($s_total_stok_rendah, 2);
 
-	if($show_perhitungan)
-	{
-	echo "S Stok Tinggi = ".number_format($s_total_stok_tinggi, dec())."<br>";
-	echo "S Stok Rendah = ".number_format($s_total_stok_rendah, dec())."<br>";
-	}
+	
         
-        //==================================================
+        //=========================================================================================================
         //x jawaban_a sanguin
 	$jumlah_total_mar_tinggi = get_jumlah_sum_atribut($db_object, "mar", "Tinggi");
 	$x_total_mar_tinggi = $jumlah_total_mar_tinggi/$jumlah_tinggi;
@@ -129,11 +132,11 @@ function ProsesNaiveBayes($db_object, $id_tbl_data=0,
 
     if($show_perhitungan)
 	{
-	echo "<br>";
-	echo "<strong><u>Atribut Maret:<br></u></strong>";
-	echo "X Maret Tinggi=".number_format($x_total_mar_tinggi, dec())."<br>";
-	echo "X Maret Rendah=".number_format($x_total_apr_rendah, dec())."<br>";
-	echo "<br>";
+	// echo "<br>";
+	// echo "<strong><u>Atribut Maret:<br></u></strong>";
+	// echo "X Maret Tinggi=".number_format($x_total_mar_tinggi, dec())."<br>";
+	// echo "X Maret Rendah=".number_format($x_total_apr_rendah, dec())."<br>";
+	// echo "<br>";
         }
 
 	$s2_total_mar_tinggi = get_s2_populasi($db_object, 'mar', 'Tinggi', $x_total_mar_tinggi, $jumlah_tinggi);
@@ -141,9 +144,9 @@ function ProsesNaiveBayes($db_object, $id_tbl_data=0,
 
         if($show_perhitungan)
 	{
-	echo "S2 Maret Tinggi=".number_format($s2_total_mar_tinggi, dec())."<br>";
-	echo "S2 Maret Rendah=".number_format($s2_total_mar_rendah, dec())."<br>";
-	echo "<br>";
+	// echo "S2 Maret Tinggi=".number_format($s2_total_mar_tinggi, dec())."<br>";
+	// echo "S2 Maret Rendah=".number_format($s2_total_mar_rendah, dec())."<br>";
+	// echo "<br>";
     }
 
 	//S jawaban_a Sanguin
@@ -153,8 +156,8 @@ function ProsesNaiveBayes($db_object, $id_tbl_data=0,
 
 	if($show_perhitungan)
 	{
-	echo "S Maret Tinggi =".number_format($s_total_mar_tinggi, dec())."<br>";
-	echo "S Maret Rendah =".number_format($s_total_mar_rendah, dec())."<br>";
+	// echo "S Maret Tinggi =".number_format($s_total_mar_tinggi, dec())."<br>";
+	// echo "S Maret Rendah =".number_format($s_total_mar_rendah, dec())."<br>";
     }
 
 	//s2 ^2 jawaban_a sanguin
@@ -171,11 +174,11 @@ function ProsesNaiveBayes($db_object, $id_tbl_data=0,
 
 	if($show_perhitungan)
 	{
-	echo "<br>";
-	echo "<strong><u>Atribut April:<br></u></strong>";
-	echo "X April Tinggi=".number_format($x_total_apr_tinggi, dec())."<br>";
-	echo "X April Rendah=".number_format($x_total_apr_rendah, dec())."<br>";
-	echo "<br>";
+	// echo "<br>";
+	// echo "<strong><u>Atribut April:<br></u></strong>";
+	// echo "X April Tinggi=".number_format($x_total_apr_tinggi, dec())."<br>";
+	// echo "X April Rendah=".number_format($x_total_apr_rendah, dec())."<br>";
+	// echo "<br>";
     }
 
 	$s2_total_apr_tinggi = get_s2_populasi($db_object, 'apr', 'Tinggi', $x_total_apr_tinggi, $jumlah_tinggi);
@@ -183,9 +186,9 @@ function ProsesNaiveBayes($db_object, $id_tbl_data=0,
 
     if($show_perhitungan)
 	{
-	echo "S2 April Tinggi=".number_format($s2_total_apr_tinggi, dec())."<br>";
-	echo "S2 April Rendah=".number_format($s2_total_apr_rendah, dec())."<br>";
-	echo "<br>";
+	// echo "S2 April Tinggi=".number_format($s2_total_apr_tinggi, dec())."<br>";
+	// echo "S2 April Rendah=".number_format($s2_total_apr_rendah, dec())."<br>";
+	// echo "<br>";
     }
 
 	//S jawaban_a Sanguin
@@ -194,8 +197,8 @@ function ProsesNaiveBayes($db_object, $id_tbl_data=0,
 	$s_total_apr_rendah = sqrt($s2_total_apr_rendah);
 
         if($show_perhitungan){
-	echo "S April Tinggi =".number_format($s_total_apr_tinggi, dec())."<br>";
-	echo "S April Rendah =".number_format($s_total_apr_rendah, dec())."<br>";
+	// echo "S April Tinggi =".number_format($s_total_apr_tinggi, dec())."<br>";
+	// echo "S April Rendah =".number_format($s_total_apr_rendah, dec())."<br>";
         }
         //s2 ^2 jawaban_a sanguin
         $s2_pangkat2_apr_tinggi = pow($s2_total_apr_tinggi, 2);
@@ -210,11 +213,11 @@ function ProsesNaiveBayes($db_object, $id_tbl_data=0,
 	
 		if($show_perhitungan)
 		{
-		echo "<br>";
-		echo "<strong><u>Atribut Mei:<br></u></strong>";
-		echo "X Mei Tinggi=".number_format($x_total_mei_tinggi, dec())."<br>";
-		echo "X Mei Rendah=".number_format($x_total_mei_rendah, dec())."<br>";
-		echo "<br>";
+		// echo "<br>";
+		// echo "<strong><u>Atribut Mei:<br></u></strong>";
+		// echo "X Mei Tinggi=".number_format($x_total_mei_tinggi, dec())."<br>";
+		// echo "X Mei Rendah=".number_format($x_total_mei_rendah, dec())."<br>";
+		// echo "<br>";
 		}
 	
 		$s2_total_mei_tinggi = get_s2_populasi($db_object, 'mei', 'Tinggi', $x_total_mei_tinggi, $jumlah_tinggi);
@@ -222,9 +225,9 @@ function ProsesNaiveBayes($db_object, $id_tbl_data=0,
 	
 		if($show_perhitungan)
 		{
-		echo "S2 Mei Tinggi=".number_format($s2_total_mei_tinggi, dec())."<br>";
-		echo "S2 Mei Rendah=".number_format($s2_total_mei_rendah, dec())."<br>";
-		echo "<br>";
+		// echo "S2 Mei Tinggi=".number_format($s2_total_mei_tinggi, dec())."<br>";
+		// echo "S2 Mei Rendah=".number_format($s2_total_mei_rendah, dec())."<br>";
+		// echo "<br>";
 		}
 	
 		//S jawaban_a Sanguin
@@ -233,8 +236,8 @@ function ProsesNaiveBayes($db_object, $id_tbl_data=0,
 		$s_total_mei_rendah = sqrt($s2_total_mei_rendah);
 	
 			if($show_perhitungan){
-		echo "S Mei Tinggi =".number_format($s_total_mei_tinggi, dec())."<br>";
-		echo "S Mei Rendah =".number_format($s_total_mei_rendah, dec())."<br>";
+		// echo "S Mei Tinggi =".number_format($s_total_mei_tinggi, dec())."<br>";
+		// echo "S Mei Rendah =".number_format($s_total_mei_rendah, dec())."<br>";
 			}
 			//s2 ^2 jawaban_a sanguin
 			$s2_pangkat2_mei_tinggi = pow($s2_total_mei_tinggi, 2);
@@ -250,7 +253,7 @@ function ProsesNaiveBayes($db_object, $id_tbl_data=0,
         //======================================================================
         //#HITUNG PROBABILITAS DENGAN DATA UJI
 		if($show_perhitungan){
-			echo "<strong><h3>Probabilitas<br></h3></strong>";
+			// echo "<strong><h3>Probabilitas<br></h3></strong>";
 			}
 	$dua_phi = (2*3.14);
         
@@ -264,9 +267,9 @@ function ProsesNaiveBayes($db_object, $id_tbl_data=0,
 
         //display
         if($show_perhitungan){
-		echo "<br>";
-		echo "P(stok|Tinggi)=".number_format($prob_stok_tinggi, dec())."<br>";
-		echo "P(stok|Rendah)=".number_format($prob_stok_rendah, dec())."<br>";
+		// echo "<br>";
+		// echo "P(stok|Tinggi)=".number_format($prob_stok_tinggi, dec())."<br>";
+		// echo "P(stok|Rendah)=".number_format($prob_stok_rendah, dec())."<br>";
         }
 
     //======================================================================
@@ -281,9 +284,9 @@ function ProsesNaiveBayes($db_object, $id_tbl_data=0,
 
         //display
         if($show_perhitungan){
-	echo "<br>";
-	echo "P(mar|Tinggi)=".number_format($prob_mar_tinggi, dec())."<br>";
-	echo "P(mar|Rendah)=".number_format($prob_mar_rendah, dec())."<br>";
+	// echo "<br>";
+	// echo "P(mar|Tinggi)=".number_format($prob_mar_tinggi, dec())."<br>";
+	// echo "P(mar|Rendah)=".number_format($prob_mar_rendah, dec())."<br>";
         }
         //======================================================================
         //#jawaban_c
@@ -297,9 +300,9 @@ function ProsesNaiveBayes($db_object, $id_tbl_data=0,
 
 		//display
 		if($show_perhitungan){
-	echo "<br>";
-	echo "P(apr|Tinggi)=".number_format($prob_apr_tinggi, dec())."<br>";
-	echo "P(apr|Rendah)=".number_format($prob_apr_rendah, dec())."<br>";
+	// echo "<br>";
+	// echo "P(apr|Tinggi)=".number_format($prob_apr_tinggi, dec())."<br>";
+	// echo "P(apr|Rendah)=".number_format($prob_apr_rendah, dec())."<br>";
 		}
         //======================================================================
 	$depan_mei_tinggi = sqrt($dua_phi*$s2_total_mei_tinggi);
@@ -312,33 +315,33 @@ function ProsesNaiveBayes($db_object, $id_tbl_data=0,
 
 		//display
 		if($show_perhitungan){
-	echo "<br>";
-	echo "P(mei|Tinggi)=".number_format($prob_mei_tinggi, dec())."<br>";
-	echo "P(mei|Rendah)=".number_format($prob_mei_rendah, dec())."<br>";
+	// echo "<br>";
+	// echo "P(mei|Tinggi)=".number_format($prob_mei_tinggi, dec())."<br>";
+	// echo "P(mei|Rendah)=".number_format($prob_mei_rendah, dec())."<br>";
 		}
         //===============================
 	$nilai_tinggi = $p_tinggi * $prob_stok_tinggi * $prob_mar_tinggi *
 					$prob_apr_tinggi * $prob_mei_tinggi;
         if($show_perhitungan){
-	echo "<br>";
-	echo "Nilai Tinggi = ".number_format($p_tinggi, dec())
-							." x ".number_format($prob_stok_tinggi, dec())
-                            ." x ".number_format($prob_mar_tinggi, dec())
-                            ." x ".number_format($prob_apr_tinggi, dec())
-                            ." x ".number_format($prob_mei_tinggi, dec())
-                            ." = ".number_format($nilai_tinggi, 20);
+	// echo "<br>";
+	// echo "Nilai Tinggi = ".number_format($p_tinggi, dec())
+	// 						." x ".number_format($prob_stok_tinggi, dec())
+    //                         ." x ".number_format($prob_mar_tinggi, dec())
+    //                         ." x ".number_format($prob_apr_tinggi, dec())
+    //                         ." x ".number_format($prob_mei_tinggi, dec())
+    //                         ." = ".number_format($nilai_tinggi, 20);
         }
         //===============================
         $nilai_rendah = $p_rendah * $prob_stok_rendah * $prob_mar_rendah * $prob_apr_rendah *
 					$prob_mei_rendah;
         if($show_perhitungan){
-	echo "<br>";
-	echo "Nilai Rendah = ".number_format($p_rendah, dec())
-							." x ".number_format($prob_stok_rendah, dec())
-                            ." x ".number_format($prob_mar_rendah, dec())
-                            ." x ".number_format($prob_apr_rendah, dec())
-                            ." x ".number_format($prob_mei_rendah, dec())
-                            ." = ".number_format($nilai_rendah, 20);
+	// echo "<br>";
+	// echo "Nilai Rendah = ".number_format($p_rendah, dec())
+	// 						." x ".number_format($prob_stok_rendah, dec())
+    //                         ." x ".number_format($prob_mar_rendah, dec())
+    //                         ." x ".number_format($prob_apr_rendah, dec())
+    //                         ." x ".number_format($prob_mei_rendah, dec())
+    //                         ." = ".number_format($nilai_rendah, 20);
         }
     $hasil_prediksi = '';
     
@@ -358,24 +361,18 @@ function ProsesNaiveBayes($db_object, $id_tbl_data=0,
 
 //    $nilai_sanguin = number_format($nilai_sanguin, 50);
 //    $nilai_koleris = number_format($nilai_koleris, 50);
-    if($id_tbl_data>0){
-        $res_hasil = update_hasil_prediksi($db_object, $id_tbl_data, $hasil_prediksi, 
-                $nilai_tinggi, $nilai_rendah);
-    }
-    return array($hasil_prediksi, $nilai_tinggi, $nilai_rendah);
-      
+	if($id_tbl_data > 0)
+	{
+		$res_hasil = update_hasil_prediksi($db_object, $id_tbl_data, $hasil_prediksi);
+	}
+	return array($hasil_prediksi);  
 }
 	
-function update_hasil_prediksi($db_object, $id, $hasil, $nilai_tinggi, $nilai_rendah){
-	$sql = "UPDATE tbl_data "
-                . "SET "
-                . "minat_hasil='$hasil', "
-                . "nilai_tinggi='$nilai_tinggi', "
-                . "nilai_rendah='$nilai_rendah'
-                WHERE id=$id";
+function update_hasil_prediksi($db_object, $id_tbl_data, $hasil_prediksi)
+{
+	$sql = "UPDATE tbl_data set minat_hasil= '$hasil_prediksi' where id_barang = '$id_tbl_data'";
 	return $db_object->db_query($sql);
 }
-
 
 function get_jumlah_sum_atribut($db_object, $atribut, $minat){
 	$sql = "SELECT SUM($atribut) FROM tbl_data WHERE minat='$minat'";

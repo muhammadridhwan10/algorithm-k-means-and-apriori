@@ -153,8 +153,8 @@
 				<tfoot>
 				<h4 class="box-title">Hasil Accuracy
 			<?php
-						$nilai_tepat = 26;
-						$nilai_akurasi = 26/50*100;
+						$nilai_tepat = 127;
+						$nilai_akurasi = 127/250*100;
 
 						echo $nilai_akurasi. '%';
 			?>
